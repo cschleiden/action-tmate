@@ -89,8 +89,9 @@ export async function run() {
     const setDefaultCommand = `set-option -g default-command "bash --rcfile /tmp/tmate.bashrc" \\;`;
 
     core.debug("Creating new session")
-    await execShellCommand(`${tmate} ${newSessionExtra} ${setDefaultCommand} new-session -d`);
-    await execShellCommand(`${tmate} wait tmate-ready`);
+    //await execShellCommand(`${tmate} ${newSessionExtra} ${setDefaultCommand} new-session -d`);
+    await execShellCommand(`${tmate} -F`);
+    //await execShellCommand(`${tmate} wait tmate-ready`);
     console.debug("Created new session successfully")
 
     core.debug("Fetching connection strings")
