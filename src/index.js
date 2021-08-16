@@ -64,7 +64,7 @@ export async function run() {
       core.debug("Generated SSH-Key successfully")
     }
 
-    let newSessionExtra = ""
+    let newSessionExtra = " -F "
     if (core.getInput("limit-access-to-actor") === "true") {
       const { actor } = github.context
       const octokit = new Octokit()
